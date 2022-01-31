@@ -2,9 +2,9 @@
 import { renderIngredients, renderMeals } from './utils.js';
 
 //grabbing form, ingredients, and meals(recipe)
-const form = document.getElementById('add-ingredient');
-const ingredientsList = document.getElementById('ingredient-list');
-const mealList = document.getElementById('meal-list');
+const form = document.getElementById('add-ingredient'); // grab form
+const ingredientsList = document.getElementById('ingredient-list'); // list of ingredients
+const mealList = document.getElementById('meal-list'); // grabbing meal list
 // remove save and grabbing meal
 const remove = document.getElementById('remove');
 
@@ -16,7 +16,7 @@ let ingredients = [];
 let recipes = []; 
 
 // set event listeners 
-// IMPURE RENDER FUNCTIONS
+// IMPURE RENDER FUNCTIONS 
 // YOUR CODE MUST CALL THESE FUNCTIONS
 function renderMeals() {
   mealList.textContent = '';
