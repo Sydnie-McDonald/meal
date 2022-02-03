@@ -30,7 +30,7 @@ function renderIngredients() {
   ingredientsList.textContent = '';
   for (let item of ingredients) {
     const li = renderIngredientLI(item);
-    ingredientList.appendChild(li);
+    ingredientsList.appendChild(li);
   }
 }
 
@@ -57,8 +57,8 @@ form.addEventListener('submit', (e) => {
 remove.addEventListener('click', () => {
   //Step 2 -- add code to allow users to remove the most recent stat
   //   // Hint -- how do you remove an element from an array?
-  //   // Hint -- how can we rerender the stats using a function above?
   ingredients.pop();
+  //   // Hint -- how can we rerender the stats using a function above? 
   renderIngredients();
 });
 
