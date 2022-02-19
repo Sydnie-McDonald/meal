@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
-
 // import functions and grab DOM elements
-import { renderIngredientLI, renderMealLI } from './utils.js';
+import { renderIngredientLI, renderMeals } from './utils.js';
 //grabbing form, ingredients, and meals(recipe)
 const form = document.getElementById('add-ingredient'); // grab form
 const ingredientsList = document.getElementById('ingredient-list'); // list of ingredients
@@ -33,41 +31,40 @@ form.addEventListener('submit', (e) => {
     form.reset();
 });
 
+function renderIngredients() {
+    ingredientsList.textContent = '';
+    for (let ingredient of ingredients) {
+        const li = renderIngredientLI(ingredient);
+        ingredientsList.append(li);
+    }
+}
+
 function renderMeals() {
     mealList.textContent = '';
     for (let meal of meals) {
-        const li = renderMealLI(meal);
+        const li = renderMeal(meal);
         mealList.append(li);
     }
-}
-
-function renderIngredients() {
-    ingredientsList.textContent = '';
-    for (let item of ingredients) {
-        const li = renderIngredientLI(item);
-        ingredientsList.appendChild(li);
-    }
-}
-
+} 
 
 remove.addEventListener('click', () => {
-  //Step 2 -- add code to allow users to remove the most recent stat
-  //   // Hint -- how do you remove an element from an array?
+    //Step 2 -- add code to allow users to remove the most recent stat
+    //   // Hint -- how do you remove an element from an array?
     ingredients.pop();
-  //   // Hint -- how can we rerender the stats using a function above? 
+    //   // Hint -- how can we rerender the stats using a function above? 
     renderIngredients();
 });
 
 saveMeal.addEventListener('click', () => {
-  //   // Step 3 - add code to allow users to save the state
+    //   // Step 3 - add code to allow users to save the state
     const name = meal.value;
-    const count = ingredients.length;
-  //   // Loop through the list of stats and add up the total points scored
-    meals.push({ name, count });
-  //   // Create a new object with the game number and the total points
-  //   // { number: games.length + 1, totalPoints: totalPoints }
-  //   // Push the new object onto the games array then call renderGames
-  //   // reset the stats with resetStats
+    const totalIngredients = ingredients.length;
+    //   // Loop through the list of stats and add up the total points scored
+    meals.push({ name, totalIngredients });
+    //   // Create a new object with the game number and the total points
+    //   // { number: games.length + 1, totalPoints: totalPoints }
+    //   // Push the new object onto the games array then call renderGames
+    //   // reset the stats with resetStats
     renderMeals();
     resetIngredients();
 });
