@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 // import functions and grab DOM elements
-import { renderIngredientLI, renderMeals } from './utils.js';
+import { renderIngredientLI, renderMealLI } from './utils.js';
 //grabbing form, ingredients, and meals(recipe)
 const form = document.getElementById('add-ingredient'); // grab form
 const ingredientsList = document.getElementById('ingredient-list'); // list of ingredients
@@ -42,10 +43,10 @@ function renderIngredients() {
 function renderMeals() {
     mealList.textContent = '';
     for (let meal of meals) {
-        const li = renderMeal(meal);
+        const li = renderMealLI(meal);
         mealList.append(li);
     }
-} 
+}
 
 remove.addEventListener('click', () => {
     //Step 2 -- add code to allow users to remove the most recent stat
@@ -58,9 +59,9 @@ remove.addEventListener('click', () => {
 saveMeal.addEventListener('click', () => {
     //   // Step 3 - add code to allow users to save the state
     const name = meal.value;
-    const totalIngredients = ingredients.length;
+    const count = ingredients.length;
     //   // Loop through the list of stats and add up the total points scored
-    meals.push({ name, totalIngredients });
+    meals.push({ name, count });
     //   // Create a new object with the game number and the total points
     //   // { number: games.length + 1, totalPoints: totalPoints }
     //   // Push the new object onto the games array then call renderGames
