@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { renderIngredientLI, renderMealLI } from '../utils.js';
+import { renderMealLI } from '../utils.js';
 
 const test = QUnit.test;
 
