@@ -17,10 +17,10 @@ test('renderMeal will create a list', (expect) => {
     expect.equal(actual.outerHTML, expected);
 });
 
-test('return second test', (expect) => {
+test('renderIngredients will return a list of ingredients', (expect) => {
     //Arrange
     // Set up your arguments and expectations
-    const expected = '<li><p>undefined :</p><ul><li>undefined undefined undefined</li><li>undefined undefined undefined</li><li>undefined undefined undefined</li><li>undefined undefined undefined</li></ul></li>';
+    const expected = '<li>3 cups of undefined (0 Calories)</li>';
 
     //Act
     // Call the function you're testing and set the result to a const
