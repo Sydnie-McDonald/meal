@@ -1,1 +1,20 @@
 /* add home page styles here */
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 50%;
+}
+.ingredients {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.ingredient-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: plum;
+}
